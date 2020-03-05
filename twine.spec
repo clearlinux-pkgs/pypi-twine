@@ -432,8 +432,6 @@ Requires: pypi(tqdm)
 Requires: pypi(setuptools)
 Requires: pypi(importlib-metadata)
 Requires: pypi(keyring)
-Requires: pypi(readme-renderer)
-Requires: pypi(pkginfo)
 
 %description python3
 python3 components for the twine package.
