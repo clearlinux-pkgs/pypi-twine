@@ -4,7 +4,7 @@
 #
 Name     : twine
 Version  : 3.4.1
-Release  : 14
+Release  : 15
 URL      : https://files.pythonhosted.org/packages/ac/5c/e12811190a3560c85dfb4caea752635abea59c53390592493549d88f086a/twine-3.4.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ac/5c/e12811190a3560c85dfb4caea752635abea59c53390592493549d88f086a/twine-3.4.1.tar.gz
 Summary  : Collection of utilities for publishing packages on PyPI
