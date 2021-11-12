@@ -4,7 +4,7 @@
 #
 Name     : twine
 Version  : 3.6.0
-Release  : 19
+Release  : 20
 URL      : https://files.pythonhosted.org/packages/97/af/d438c8eba421a8323175843d312d6e2f8c6917190a6aec3796e363bad8b4/twine-3.6.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/97/af/d438c8eba421a8323175843d312d6e2f8c6917190a6aec3796e363bad8b4/twine-3.6.0.tar.gz
 Summary  : Collection of utilities for publishing packages on PyPI
@@ -97,7 +97,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1636669006
+export SOURCE_DATE_EPOCH=1636751368
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -115,12 +115,10 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/twine
 cp %{_builddir}/twine-3.6.0/LICENSE %{buildroot}/usr/share/package-licenses/twine/7f6eb21389a5af4de0e7927a25fe236bc0cd3a75
 python3 -m install --destdir=%{buildroot} dist/*.whl
+chmod a+x %{buildroot}/usr/bin/* || :
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
-## install_append content
-chmod 0755 %{buildroot}/usr/bin/twine
-## install_append end
 
 %files
 %defattr(-,root,root,-)
