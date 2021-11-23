@@ -4,7 +4,7 @@
 #
 Name     : twine
 Version  : 3.6.0
-Release  : 20
+Release  : 21
 URL      : https://files.pythonhosted.org/packages/97/af/d438c8eba421a8323175843d312d6e2f8c6917190a6aec3796e363bad8b4/twine-3.6.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/97/af/d438c8eba421a8323175843d312d6e2f8c6917190a6aec3796e363bad8b4/twine-3.6.0.tar.gz
 Summary  : Collection of utilities for publishing packages on PyPI
@@ -14,30 +14,24 @@ Requires: twine-bin = %{version}-%{release}
 Requires: twine-license = %{version}-%{release}
 Requires: twine-python = %{version}-%{release}
 Requires: twine-python3 = %{version}-%{release}
-Requires: colorama
-Requires: importlib_metadata
-Requires: keyring
-Requires: pkginfo
-Requires: readme_renderer
-Requires: requests
-Requires: requests-toolbelt
-Requires: rfc3986
-Requires: tqdm
 BuildRequires : buildreq-distutils3
-BuildRequires : colorama
-BuildRequires : keyring
-BuildRequires : pkginfo
 BuildRequires : pluggy
 BuildRequires : py-python
+BuildRequires : pypi(colorama)
+BuildRequires : pypi(importlib_metadata)
+BuildRequires : pypi(keyring)
+BuildRequires : pypi(pkginfo)
+BuildRequires : pypi(readme_renderer)
+BuildRequires : pypi(requests)
+BuildRequires : pypi(requests_toolbelt)
+BuildRequires : pypi(rfc3986)
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(setuptools_scm)
+BuildRequires : pypi(tqdm)
+BuildRequires : pypi(wheel)
 BuildRequires : pytest
-BuildRequires : requests
-BuildRequires : requests-toolbelt
-BuildRequires : rfc3986
-BuildRequires : setuptools
 BuildRequires : tox
-BuildRequires : tqdm
 BuildRequires : virtualenv
-BuildRequires : wheel
 
 %description
 .. image:: https://img.shields.io/pypi/v/twine.svg
@@ -97,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1636751368
+export SOURCE_DATE_EPOCH=1637685939
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -114,8 +108,7 @@ export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/twine
 cp %{_builddir}/twine-3.6.0/LICENSE %{buildroot}/usr/share/package-licenses/twine/7f6eb21389a5af4de0e7927a25fe236bc0cd3a75
-python3 -m install --destdir=%{buildroot} dist/*.whl
-chmod a+x %{buildroot}/usr/bin/* || :
+pip install --root=%{buildroot} --no-deps dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----

@@ -1,0 +1,10 @@
+3.6.0
+pypi(colorama)
+pypi(importlib_metadata)
+pypi(keyring)
+pypi(pkginfo)
+pypi(readme_renderer)
+pypi(requests)
+pypi(requests_toolbelt)
+pypi(rfc3986)
+pypi(tqdm)
