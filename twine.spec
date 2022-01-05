@@ -4,7 +4,7 @@
 #
 Name     : twine
 Version  : 3.7.1
-Release  : 24
+Release  : 25
 URL      : https://files.pythonhosted.org/packages/9d/12/0e4c8df764d87c15b8256444d0b8b433c183ce3a986ffae3086df3f876ef/twine-3.7.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/9d/12/0e4c8df764d87c15b8256444d0b8b433c183ce3a986ffae3086df3f876ef/twine-3.7.1.tar.gz
 Summary  : Collection of utilities for publishing packages on PyPI
@@ -15,23 +15,23 @@ Requires: twine-license = %{version}-%{release}
 Requires: twine-python = %{version}-%{release}
 Requires: twine-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pluggy
-BuildRequires : py-python
 BuildRequires : pypi(colorama)
 BuildRequires : pypi(importlib_metadata)
 BuildRequires : pypi(keyring)
 BuildRequires : pypi(pkginfo)
+BuildRequires : pypi(pluggy)
+BuildRequires : pypi(py)
+BuildRequires : pypi(pytest)
 BuildRequires : pypi(readme_renderer)
 BuildRequires : pypi(requests)
 BuildRequires : pypi(requests_toolbelt)
 BuildRequires : pypi(rfc3986)
 BuildRequires : pypi(setuptools)
 BuildRequires : pypi(setuptools_scm)
+BuildRequires : pypi(tox)
 BuildRequires : pypi(tqdm)
+BuildRequires : pypi(virtualenv)
 BuildRequires : pypi(wheel)
-BuildRequires : pytest
-BuildRequires : tox
-BuildRequires : virtualenv
 
 %description
 .. image:: https://img.shields.io/pypi/v/twine.svg
@@ -91,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1638889782
+export SOURCE_DATE_EPOCH=1641422354
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
