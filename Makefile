@@ -1,5 +1,5 @@
 PKG_NAME := pypi-twine
-URL = https://files.pythonhosted.org/packages/d1/3e/ce331d7e215abdc16c53e65f8506bfccf4840ce191b709a37b8c83cc32c7/twine-3.8.0.tar.gz
+URL = https://files.pythonhosted.org/packages/35/8d/1b61752e1c3036ce36155d1a5144444e0134d5b9624a7f7ef5b6b1ac61d1/twine-4.0.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
