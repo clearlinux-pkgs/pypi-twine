@@ -4,7 +4,7 @@
 #
 Name     : pypi-twine
 Version  : 4.0.2
-Release  : 37
+Release  : 38
 URL      : https://files.pythonhosted.org/packages/b7/1a/a7884359429d801cd63c2c5512ad0a337a509994b0e42d9696d4778d71f6/twine-4.0.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b7/1a/a7884359429d801cd63c2c5512ad0a337a509994b0e42d9696d4778d71f6/twine-4.0.2.tar.gz
 Summary  : Collection of utilities for publishing packages on PyPI
