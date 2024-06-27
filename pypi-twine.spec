@@ -7,7 +7,7 @@
 #
 Name     : pypi-twine
 Version  : 5.1.1
-Release  : 45
+Release  : 46
 URL      : https://files.pythonhosted.org/packages/77/68/bd982e5e949ef8334e6f7dcf76ae40922a8750aa2e347291ae1477a4782b/twine-5.1.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/77/68/bd982e5e949ef8334e6f7dcf76ae40922a8750aa2e347291ae1477a4782b/twine-5.1.1.tar.gz
 Summary  : Collection of utilities for publishing packages on PyPI
@@ -91,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1719506077
+export SOURCE_DATE_EPOCH=1719507195
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -107,6 +107,7 @@ FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
 export MAKEFLAGS=%{?_smp_mflags}
+pypi-dep-fix.py . pkginfo
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
 CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
@@ -114,6 +115,7 @@ CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 "
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -march=x86-64-v3 "
+pypi-dep-fix.py . pkginfo
 python3 -m build --wheel --skip-dependency-check --no-isolation
 
 popd
@@ -138,6 +140,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-twine
 cp %{_builddir}/twine-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-twine/7f6eb21389a5af4de0e7927a25fe236bc0cd3a75 || :
 python3 -m installer --destdir=%{buildroot} dist/*.whl
+pypi-dep-fix.py %{buildroot} pkginfo
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
