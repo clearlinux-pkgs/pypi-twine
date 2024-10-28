@@ -7,7 +7,7 @@
 #
 Name     : pypi-twine
 Version  : 5.1.1
-Release  : 46
+Release  : 47
 URL      : https://files.pythonhosted.org/packages/77/68/bd982e5e949ef8334e6f7dcf76ae40922a8750aa2e347291ae1477a4782b/twine-5.1.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/77/68/bd982e5e949ef8334e6f7dcf76ae40922a8750aa2e347291ae1477a4782b/twine-5.1.1.tar.gz
 Summary  : Collection of utilities for publishing packages on PyPI
